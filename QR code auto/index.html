@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="qrCode">
+        <div class="qrbox">
+            <img src="./default.png" alt="qr-code">
+        </div>
+        <div class="qrRead">
+            <video id="camera"></video>
+            <p class="resultado" id="result">O resultado sai aqui</p>
+        </div>
+        <div class="clear"></div>
+    </section>
+
+
+    <script src="instascan.min.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        const scanner = new Instascan.Scanner({
+            video: document.getElementById('camera')
+        })
+        scanner.addListener('scan',content =>{
+            let resp = document.getElementById("result");
+            resp.innerHTML = content;
+        })
+        Instascan.Camera.getCameras().then(cameras =>{
+            if (cameras.length > 0) {
+            scanner.start(cameras[0]);
+            } else {
+            console.error('No cameras found.');
+            }
+        })
+    </script>
+</body>
+</html>

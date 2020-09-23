@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    display:grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear{
+    clear: both;
+}
+
+.qrCode{
+    width: 1250px;
+}
+
+.qrbox{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-row-gap: 10px;
+    width: 40%;
+    border: 2px solid #a74fc2;
+    border-radius: 0.5rem;
+    float: left;
+}
+
+.qrRead{
+    margin-left: 10%;
+    padding: 10px;
+    width: 40%;
+    border: 2px solid #a74fc2;
+    border-radius: 0.5rem;
+    float: left;
+}
+
+video{
+    height: 90%;
+    margin: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+p{
+    color: #222222;
+    font-size: 24px;
+    text-align: center;
+    margin: 20px ;
+    height: 10%;
+}
+
+img{
+    height: 300px;
+    width: 300px;
+    padding: 1rem;
+    grid-column: 1/-1;
+    margin: 0 auto;
+}
