@@ -23,7 +23,7 @@ body{
     width: 1250px;
 }
 
-.qrbox{
+.qrBox{
     display: grid;
     grid-template-columns: 1fr auto;
     grid-row-gap: 10px;
