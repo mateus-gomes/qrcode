@@ -6,6 +6,7 @@ function aleatorio(){
     var cod = fazerCod(5)
     console.log(cod);
     requisicao(cod)
+    retornar();
     generateQR(cod)
 }
 
@@ -52,4 +53,17 @@ function requisicao(cod){
         }
     })
     .catch(res => {Erro('Não conseguimos cadastrar')})
+}
+
+function retornar(){
+    fetch("codes/return", { 
+        method: 'get'
+      })
+      .then(async function(response) { 
+        response.json().then(json => {
+            console.log(json);
+            return(json);
+        })
+      })
+      .catch(function(err) { console.error(err); });
 }

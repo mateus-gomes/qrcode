@@ -8,7 +8,7 @@ routes.get('/',function(req,res){
 })
 
 
-routes.get('/codes',CodeController.index);
+routes.get('/codes/return',CodeController.returnCode);
 routes.post('/codes/store',CodeController.storeCode);
 
 module.exports = routes;

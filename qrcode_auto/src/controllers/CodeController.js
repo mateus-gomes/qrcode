@@ -1,10 +1,10 @@
 const Codes = require('../models/Codes');
 
 module.exports = {
-    async index(req,res){
+    async returnCode(req,res){
         const codes = await Codes.findOne();
-
-        return res.json(codes);
+        console.log("Retornandooo" + JSON.stringify(codes.code));
+        return res.json(JSON.stringify(codes.code));
     },
 
     async storeCode(req,res){
