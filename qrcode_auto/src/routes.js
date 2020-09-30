@@ -4,7 +4,7 @@ const CodeController = require('./controllers/CodeController');
 const routes = express.Router();
 
 routes.get('/',function(req,res){
-    res.sendfile(__dirname + "/public/index.html");
+    res.sendfile(__dirname + "/public/html/index.html");
 })
 
 

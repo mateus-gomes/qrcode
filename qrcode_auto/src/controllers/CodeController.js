@@ -2,9 +2,12 @@ const Codes = require('../models/Codes');
 
 module.exports = {
     async returnCode(req,res){
-        const codes = await Codes.findOne();
-        console.log("Retornandooo" + JSON.stringify(codes.code));
-        return res.json(JSON.stringify(codes.code));
+        const codes = await Codes.findAll({
+            limit: 1,
+            order: [ [ 'id', 'DESC' ]]
+          })
+        console.log("Retornando código: " + JSON.stringify(codes[0].code));
+        return res.json(JSON.stringify(codes[0]));
     },
 
     async storeCode(req,res){

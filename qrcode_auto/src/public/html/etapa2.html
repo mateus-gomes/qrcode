@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-
-    <section class="qrCode">
-        <div class="qrBox">
-            <img src="default.png" alt="qr-code">
-        </div>
+    <section class="qrBox">
         <div class="qrRead">
             <video id="Camera"></video>
             <p class="Result" id="Result">O resultado sai aqui</p>
         </div>
-        <div class="clear"></div>
     </section>
 
-
     <script src="instascan.min.js"></script>
-    <script src="script.js"></script>
+    <script src="leitura.js"></script>
     <script type="text/javascript">
         const scanner = new Instascan.Scanner({
             video: document.getElementById('Camera')
@@ -29,6 +22,7 @@
         scanner.addListener('scan',content =>{
             let response = document.getElementById("Result");
             response.innerHTML = content;
+            requisicao(content);
         })
         Instascan.Camera.getCameras().then(cameras =>{
             if (cameras.length > 0) {
