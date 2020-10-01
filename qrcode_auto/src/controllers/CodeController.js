@@ -6,8 +6,13 @@ module.exports = {
             limit: 1,
             order: [ [ 'id', 'DESC' ]]
           })
-        console.log("Retornando código: " + JSON.stringify(codes[0].code));
-        return res.json(JSON.stringify(codes[0]));
+          if(codes.length == 0){
+            console.log("Banco vazio");
+            return res.json();
+          }else{
+            console.log("Retornando código: " + JSON.stringify(codes[0].code));
+            return res.json(JSON.stringify(codes[0]));
+          }
     },
 
     async storeCode(req,res){
