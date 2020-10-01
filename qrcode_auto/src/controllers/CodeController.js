@@ -13,6 +13,9 @@ module.exports = {
     async storeCode(req,res){
         const code = req.body.cod;
         console.log(code);
+        Codes.destroy({
+            truncate: true
+          })
         const codes = await Codes.create({code});
 
         return res.json(codes);

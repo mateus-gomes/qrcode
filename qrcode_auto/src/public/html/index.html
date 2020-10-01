@@ -8,11 +8,26 @@
 </head>
 <body>
 
-    <section class="qrCode">
-        <div class="qrBox">
-            <img src="default.png" alt="qr-code">
+    <section class="areaLogin" id="sectionLogin">
+        <div class="container">
+            <div class="login">
+                <div class="wrapper-login">
+                    Login: <input type="text" class="inputLogin" id="login">
+                </div>
+                <div class="wrapper-login">
+                    Senha: <input type="text" class="inputLogin" id="senha">
+                </div>
+                <button class="btnLogar" onclick="logar()">Logar</button>
+            </div>
         </div>
-        <div class="clear"></div>
+    </section>
+
+    <section class="qrCode" id="sectionQrCode">
+        <div class="container">
+            <div class="qrBox">
+                <img src="default.png" alt="qr-code">
+            </div>
+        </div>
     </section>
 
     <script src="script.js"></script>

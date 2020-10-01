@@ -1,8 +1,8 @@
 let qrcode = select("img");
 let intervalo = 50;//em segundos
-let repeticao = setInterval(function(){aleatorio()}, intervalo * 1000)
-let verificacao = setInterval(function(){retornar()}, intervalo * 100)
 var resultado = '';
+let repeticao;
+let verificacao;
 
 function select(el){
     return document.querySelector(el);
@@ -42,11 +42,27 @@ function retornar(){
             console.log("Resultado:" + resultado);
             console.log("Codigo:" + obj.code);
             if(obj.code == resultado){
-                alert("Autenticado com sucesso");
+                window.location.href = '/etapa2.html'
             }else{
                 console.log("Não autenticado")
             }
         })
       })
       .catch(function(err) { console.error(err); });
+}
+
+function logar(){
+    let login = document.getElementById("login");
+    let senha = document.getElementById("senha");
+    let sectionQr = document.getElementById("sectionQrCode");
+    let sectionLogin = document.getElementById("sectionLogin");
+    if(login.value == "email" && senha.value == "senha"){
+        sectionQr.style.display = 'block';
+        sectionLogin.style.display = 'none';
+        aleatorio()
+        repeticao = setInterval(function(){aleatorio()}, intervalo * 1000)
+        verificacao = setInterval(function(){retornar()}, intervalo * 100)
+    }else{
+        console.log("login incorreto");
+    }
 }

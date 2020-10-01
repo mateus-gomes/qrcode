@@ -1,0 +1,21 @@
+Para facilitar instale o yarn e o nodemon
+
+------------------------------------------------------------------------------------
+Faça ao utilizar pela primeira vez
+1° Utilize os comandos para baixar as dependencias
+yarn add express mysql2 sequelize
+yarn add sequelize-cli -D
+
+2° Utilize o comando para criar o banco de dados
+yarn sequelize db:create
+
+3° Utilize o comando para criar a tabela
+yarn sequelize db:migrate
+
+------------------------------------------------------------------------------------
+Faça sempre que for acessar novamente
+4° Acesse a pasta src
+cd src
+
+5° Inicie o servidor
+nodemon server.js

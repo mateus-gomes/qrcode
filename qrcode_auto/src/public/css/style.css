@@ -19,27 +19,31 @@ body{
     clear: both;
 }
 
-.qrCode{
-    width: 1250px;
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+section.qrCode{
+    width: 400px;
+    height: 400px;
+    display: none;
 }
 
 .qrBox{
     display: grid;
     grid-template-columns: 1fr auto;
     grid-row-gap: 10px;
-    width: 40%;
+    width: 100%;
     border: 2px solid #a74fc2;
-    border-radius: 0.5rem;
-    float: left;
+    border-radius: 5px;
 }
 
 .qrRead{
-    margin-left: 10%;
     padding: 10px;
-    width: 40%;
-    border: 2px solid #a74fc2;
-    border-radius: 0.5rem;
-    float: left;
+    width: 100%;
+    border-radius: 5px;
 }
 
 video{
@@ -63,4 +67,36 @@ img{
     padding: 1rem;
     grid-column: 1/-1;
     margin: 0 auto;
+}
+
+section .login{
+    padding: 30px;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    border: 2px solid #a74fc2;
+    border-radius: 2px;
+}
+
+.btnLogar{
+    font-size: 20px;
+    padding: 5px;
+    color: white;
+    background-color: #a74fc2;
+    border-radius: 3px;
+    border: none;
+    width: 100%;
+    transition: .3s;
+}
+
+.btnLogar:hover{
+    background-color: #742e8a;
+    cursor: pointer;
+}
+
+.inputLogin{
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    margin-bottom: 10px;
 }
