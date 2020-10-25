@@ -35,19 +35,22 @@ function retornar(){
     fetch("codes/return", { 
         method: 'get'
       })
-      .then(async function(response) { 
-        if(response.length == null){
-            console.log("Banco vazio");
-        }else{
-            response.json().then(json =>{
-                let obj = JSON.parse(json)
-                if(obj.code == resultado){
+      .then(async function(response) {  
+
+        response.json().then(json =>{
+            console.log(json.length);
+            if(json.length == 0){
+                console.log("Banco vazio");
+            }else{
+                var codigo = json[0].code
+                console.log(codigo);
+                if(codigo == resultado){
                     window.location.href = '/etapa2.html'
                 }else{
                     console.log("Não autenticado")
                 }
-            })
-        }
+            }
+        })
       })
       .catch(function(err) { console.error(err); });
 }

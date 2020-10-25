@@ -5,11 +5,11 @@ require('./database/index.js');
 
 const app = express();
 
-app.use(express.static('public/img'));
-app.use(express.static('public/css'));
-app.use(express.static('public/html'));
-app.use(express.static('public/js'));
+app.use(express.static(__dirname + '/public/img'));
+app.use(express.static(__dirname + '/public/css'));
+app.use(express.static(__dirname + '/public/html'));
+app.use(express.static(__dirname + '/public/js'));
 app.use(express.json());
 app.use(routes);
 
-app.listen(3000);
+app.listen(3000); 
